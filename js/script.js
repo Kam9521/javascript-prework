@@ -32,20 +32,28 @@ function displayResult(argComputerMove, argPlayerMove) {
   }
 }
 
-// Clear messages
-clearMessages();
+// Function starts the game
+function playGame(playerInput) {
+  clearMessages();
 
-// Random number for computer
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let computerMove = getMoveName(randomNumber);
+  let playerMove = getMoveName(playerInput);
 
-// Get computer move from function
-let computerMove = getMoveName(randomNumber);
+  displayResult(computerMove, playerMove);
+}
 
-// Get player move
-let playerInput = prompt("Choose your move: 1-rock, 2-paper, 3-scissors");
+// Rock button listener
+document.getElementById("play-rock").addEventListener("click", function () {
+  playGame(1);
+});
 
-// Convert player input to move name
-let playerMove = getMoveName(playerInput);
+// Paper button listener
+document.getElementById("play-paper").addEventListener("click", function () {
+  playGame(2);
+});
 
-// Display result
-displayResult(computerMove, playerMove);
+// Scissors button listener
+document.getElementById("play-scissors").addEventListener("click", function () {
+  playGame(3);
+});
