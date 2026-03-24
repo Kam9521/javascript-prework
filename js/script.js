@@ -17,3 +17,18 @@ if (randomNumber == 1) {
 
 // Display computer move
 printMessage("Computer played: " + computerMove);
+// Player move
+let playerInput = prompt("Choose your move: 1-rock, 2-paper, 3-scissors");
+
+let playerMove = "unknown move";
+
+if (playerInput == 1) {
+  playerMove = "rock";
+} else if (playerInput == 2) {
+  playerMove = "paper";
+} else if (playerInput == 3) {
+  playerMove = "scissors";
+}
+
+// Display player move
+printMessage("You played: " + playerMove);
