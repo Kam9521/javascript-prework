@@ -1,3 +1,6 @@
+// Scores
+let playerScore = 0;
+let computerScore = 0;
 // Function returns move name based on number
 function getMoveName(argMoveId) {
   if (argMoveId == 1) {
@@ -21,15 +24,22 @@ function displayResult(argComputerMove, argPlayerMove) {
     printMessage("Draw!");
   } else if (argComputerMove == "rock" && argPlayerMove == "paper") {
     printMessage("You win!");
+    playerScore++;
   } else if (argComputerMove == "paper" && argPlayerMove == "scissors") {
     printMessage("You win!");
+    playerScore++;
   } else if (argComputerMove == "scissors" && argPlayerMove == "rock") {
     printMessage("You win!");
+    playerScore++;
   } else if (argPlayerMove == "unknown move") {
     printMessage("Wrong input!");
   } else {
     printMessage("Computer wins!");
+    computerScore++;
   }
+
+  document.getElementById("result").innerHTML =
+    playerScore + " - " + computerScore;
 }
 
 // Function starts the game
