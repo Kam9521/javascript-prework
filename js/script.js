@@ -1,13 +1,19 @@
 // Clear messages at the start
 clearMessages();
 
-// Define computer move
-let computerMove = "rock";
+// Random number from 1 to 3
+let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-// Define player move
-let playerMove = "paper";
+// Computer move
+let computerMove = "unknown move";
 
-// Display game message
-printMessage(
-  "I played " + computerMove + ". If your move is " + playerMove + ", you win!",
-);
+if (randomNumber == 1) {
+  computerMove = "rock";
+} else if (randomNumber == 2) {
+  computerMove = "paper";
+} else if (randomNumber == 3) {
+  computerMove = "scissors";
+}
+
+// Display computer move
+printMessage("Computer played: " + computerMove);
