@@ -1,6 +1,13 @@
-// Clear messages at the start of the game
+// Clear messages at the start
 clearMessages();
 
-// Print game messages
-printMessage("I played rock!");
-printMessage("If your move is paper, you win!");
+// Define computer move
+let computerMove = "rock";
+
+// Define player move
+let playerMove = "paper";
+
+// Display game message
+printMessage(
+  "I played " + computerMove + ". If your move is " + playerMove + ", you win!",
+);
