@@ -17,6 +17,7 @@ if (randomNumber == 1) {
 
 // Display computer move
 printMessage("Computer played: " + computerMove);
+
 // Player move
 let playerInput = prompt("Choose your move: 1-rock, 2-paper, 3-scissors");
 
@@ -32,3 +33,18 @@ if (playerInput == 1) {
 
 // Display player move
 printMessage("You played: " + playerMove);
+
+// Game result
+if (computerMove == playerMove) {
+  printMessage("Draw!");
+} else if (computerMove == "rock" && playerMove == "paper") {
+  printMessage("You win!");
+} else if (computerMove == "paper" && playerMove == "scissors") {
+  printMessage("You win!");
+} else if (computerMove == "scissors" && playerMove == "rock") {
+  printMessage("You win!");
+} else if (playerMove == "unknown move") {
+  printMessage("Wrong input!");
+} else {
+  printMessage("Computer wins!");
+}
