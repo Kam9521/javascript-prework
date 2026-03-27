@@ -17,39 +17,30 @@ function getMoveName(argMoveId) {
 
 // Function displays game result and updates score
 function displayResult(argComputerMove, argPlayerMove) {
-  printMessage("Computer played: " + argComputerMove);
-  printMessage("You played: " + argPlayerMove);
-
-  if (argPlayerMove === "unknown move") {
-    printMessage("Wrong input!");
-    return;
-  }
+  printMessage('Computer played: ' + argComputerMove);
+  printMessage('You played: ' + argPlayerMove);
 
   if (argComputerMove === argPlayerMove) {
-    printMessage("Draw!");
+    printMessage('Draw!');
     return;
   }
 
-  let playerWon = false;
-
-  if (argComputerMove === "rock" && argPlayerMove === "paper") {
-    playerWon = true;
-  } else if (argComputerMove === "paper" && argPlayerMove === "scissors") {
-    playerWon = true;
-  } else if (argComputerMove === "scissors" && argPlayerMove === "rock") {
-    playerWon = true;
-  }
-
-  if (playerWon === true) {
-    printMessage("You win!");
+  if (
+    (argComputerMove === 'rock' && argPlayerMove === 'paper') ||
+    (argComputerMove === 'paper' && argPlayerMove === 'scissors') ||
+    (argComputerMove === 'scissors' && argPlayerMove === 'rock')
+  ) {
+    printMessage('You win!');
     playerScore++;
+  } else if (argPlayerMove === 'unknown move') {
+    printMessage('Wrong input!');
   } else {
-    printMessage("Computer wins!");
+    printMessage('Computer wins!');
     computerScore++;
   }
 
-  document.getElementById("result").innerHTML =
-    playerScore + " - " + computerScore;
+  document.getElementById('result').innerHTML =
+    playerScore + ' - ' + computerScore;
 }
 
 // Function starts the game
