@@ -4,7 +4,6 @@
   let computerScore = 0;
 
   // Store result element reference
-  const resultElement = document.getElementById('result');
   const rockButton = document.getElementById('play-rock');
   const paperButton = document.getElementById('play-paper');
   const scissorsButton = document.getElementById('play-scissors');
@@ -25,6 +24,7 @@
 
   // Display round result and update score
   const displayResult = function (argComputerMove, argPlayerMove) {
+    const resultElement = document.getElementById('result');
     printMessage('Computer played: ' + argComputerMove);
     printMessage('You played: ' + argPlayerMove);
 
@@ -61,23 +61,8 @@
     displayResult(computerMove, playerMove);
   };
 
-  // Handle player move after button click
-  const handleClick = function (playerMove) {
-    playGame(playerMove);
-  };
-
-  // Add listener for rock button
-  rockButton.addEventListener('click', function () {
-    handleClick(1);
-  });
-
-  // Add listener for paper button
-  paperButton.addEventListener('click', function () {
-    handleClick(2);
-  });
-
-  // Add listener for scissors button
-  scissorsButton.addEventListener('click', function () {
-    handleClick(3);
-  });
+  // Event listeners with arrow functions
+  rockButton.addEventListener('click', () => playGame(1));
+  paperButton.addEventListener('click', () => playGame(2));
+  scissorsButton.addEventListener('click', () => playGame(3));
 }
